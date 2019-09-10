@@ -60,6 +60,17 @@ art25 = {'Silver ewer',
          'Embroidered silk handkerchief',
          'Gold locket with a painted portrait inside'}
 
+art250 = {'Gold ring set with bloodstones',
+          'Carved ivory statuette',
+          'Large gold bracelet',
+          'Silver necklace with a gemstone pendant',
+          'Bronze crown',
+          'Silk robe with gold embroidery',
+          'Large well-made tapestry',
+          'Brass mug with jade inlay',
+          'Box of turquoise animal figurines',
+          'Gold bird cage with electrum filigree'}
+
 # takes in a dice string (3d6, 4d8, 2d4, etc) and returns an integer for what was rolled
 def diceroller(diceString):
     diceCount, diceType = diceString.split('d')
@@ -84,8 +95,30 @@ def convertToCopper(coinType, amount):
         return amount * 1000
 
 # returns a random gem with specified gp value
-def getGemName(value):
-    pass
+def getSwagType(value):
+    if value == 10:
+        return random.choice(gem10)
+    elif value == 25:
+        return random.choice(art25)
+    elif value == 50:
+        return random.choice(gem50)
+    elif value == 100:
+        return random.choice(gem100)
+    elif value == 250:
+        return random.choice(art250)
+    elif value == 500:
+        return random.choice(gem500)
+    elif value == 750:
+        return random.choice()
+    elif value == 1000:
+        return random.choice(gem100)
+    elif value == 2500:
+        return random.choice()
+    elif value == 5000:
+        return random.choice(gem100)
+    elif value == 7500:
+        return random.choice(gem100)
+
 
 # art or gems for treasure hoard 0 (CR 0-4)
 def swag0():
