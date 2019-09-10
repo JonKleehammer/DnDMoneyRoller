@@ -19,8 +19,30 @@ def diceroller(diceString):
     return rollSum
 
 
-def convertToGold(coinType, amount):
+# coin types are either 's' for silver 'g' for gold 'p' for platinum, we're not using e for electrum
+def convertToCopper(coinType, amount):
+    if coinType == 's':
+        return amount * 10
+    elif coinType == 'g':
+        return amount * 100
+    elif coinType == 'p':
+        return amount * 1000
+
+# returns a random gem with specified gp value
+def getGemName(value):
     pass
+
+# art or gems for treasure hoard 0 (CR 0-4)
+def swag0():
+    # s is our swag level, from 1-100
+    s = diceroller('1d100')
+    # should return (s) (totalValue) (gem|art) (gemType|artType) (individualValue)
+    if s <= 6:
+        return
+    elif s <= 16:
+        # should return 2d6 10gp gems
+        return
+
 
 # take in user input to choice the CR of the hoard
 # 0 : 0-4
@@ -30,7 +52,16 @@ def convertToGold(coinType, amount):
 choice = 0
 
 # actually rolling the money and gems
-goldSum = 0
+copperSum = 0
 gemType = ''
 if choice == 0:
+    # rolling basic coin amounts
     copper = diceroller('6d6') * 100
+    silver = diceroller('3d6') * 100
+    gold = diceroller('2d6') * 10
+
+    # converting them all to copper
+    copperSum += copper
+    copperSum += convertToCopper('s', silver)
+    copperSum += convertToCopper('g', gold)
+
