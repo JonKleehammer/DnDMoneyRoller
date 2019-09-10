@@ -71,12 +71,13 @@ art250 = {'Gold ring set with bloodstones',
           'Box of turquoise animal figurines',
           'Gold bird cage with electrum filigree'}
 
+
 # takes in a dice string (3d6, 4d8, 2d4, etc) and returns an integer for what was rolled
 def diceroller(diceString):
     diceCount, diceType = diceString.split('d')
 
     diceCount = int(diceCount)
-    diceType = int(diceType)
+    diceType = int(diceType) + 1 #adding 1 for when when we choose a random number
 
     rollSum = 0
     for i in range(diceCount):
@@ -125,16 +126,63 @@ def swag0():
     # s is our swag level, from 1-100
     s = diceroller('1d100')
     # should return (totalValue) (count) (type) (individualValue)
+    c = 0
+    iValue = 0
     if s <= 6:
-        return 0, 0, 'nothing', 0
+        pass
     elif s <= 16:
         # should return 2d6 10gp gems
+        c = diceroller('2d6')  # count of how many of these objects were returned
+        iValue = 10 # individual value = 10 gp value
+    elif s <= 26:
+        c = diceroller('2d4')
+        iValue = 25
+    elif s <= 36:
         c = diceroller('2d6')
-        iValue = convertToCopper('g', 10)
-        tValue = c * iValue
+        iValue = 50
+    elif s <= 44:
+        c = diceroller('2d6')
+        iValue = 10
+    elif s <= 52:
+        c = diceroller('2d4')
+        iValue = 25
+    elif s <= 60:
+        c = diceroller('2d6')
+        iValue = 50
+    elif s <= 65:
+        c = diceroller('2d6')
+        iValue = 10
+    elif s <= 70:
+        c = diceroller('2d4')
+        iValue = 25
+    elif s <= 75:
+        c = diceroller('2d6')
+        iValue = 50
+    elif s <= 78:
+        c = diceroller('2d6')
+        iValue = 10
+    elif s <= 80:
+        c = diceroller('2d4')
+        iValue = 25
+    elif s <= 85:
+        c = diceroller('2d6')
+        iValue = 50
+    elif s <= 92:
+        c = diceroller('2d4')
+        iValue = 25
+    elif s <= 97:
+        c = diceroller('2d6')
+        iValue = 50
+    elif s <= 99:
+        c = diceroller('2d4')
+        iValue = 25
+    elif s <= 100:
+        c = diceroller('2d6')
+        iValue = 50
 
-        return tValue, c, '10gpGem', iValue
-
+    tValue = c * iValue
+    swagType = getSwagType(iValue)
+    return tValue, c, swagType, iValue
 
 # take in user input to choice the CR of the hoard
 # 0 : 0-4
@@ -156,4 +204,3 @@ if choice == 0:
     copperSum += copper
     copperSum += convertToCopper('s', silver)
     copperSum += convertToCopper('g', gold)
-
