@@ -49,6 +49,17 @@ gem500 = {'Alexandrite (transparent dark green)',
           'Peridot (transparent rich olive green)',
           'Topaz (transparent golden yellow)'}
 
+art25 = {'Silver ewer',
+         'Carved bone statuette',
+         'Small gold bracelet',
+         'Cloth-of-gold vestments',
+         'Black velvet mask stitched with silver thread',
+         'Copper chalice with silver filigree',
+         'Pair of engraved bone dice',
+         'Small mirror set in a painted wooden frame',
+         'Embroidered silk handkerchief',
+         'Gold locket with a painted portrait inside'}
+
 # takes in a dice string (3d6, 4d8, 2d4, etc) and returns an integer for what was rolled
 def diceroller(diceString):
     diceCount, diceType = diceString.split('d')
