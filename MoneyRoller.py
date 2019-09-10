@@ -3,10 +3,21 @@
 # Only simulates the gold because the other values are generated/picked elsewhere
 # also takes in a number of players so that the money is evenly divisible
 
+import random
 
 # takes in a dice string (3d6, 4d8, 2d4, etc) and returns an integer for what was rolled
 def diceroller(diceString):
-    pass
+    diceCount, diceType = diceString.split('d')
+
+    diceCount = int(diceCount)
+    diceType = int(diceType)
+
+    rollSum = 0
+    for i in range(diceCount):
+        rollSum += random.randrange(1, diceType)
+
+    return rollSum
+
 
 def convertToGold(coinType, amount):
     pass
@@ -19,3 +30,7 @@ def convertToGold(coinType, amount):
 choice = 0
 
 # actually rolling the money and gems
+goldSum = 0
+gemType = ''
+if choice == 0:
+    copper = diceroller('6d6') * 100
