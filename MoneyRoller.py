@@ -42,6 +42,12 @@ gem100 = {'Amber (transparent watery gold to rich gold)',
           'Spinel (transparent red, red-brown, or deep green)',
           'Tourmaline (transparent pale green, blue, brown, or red)'}
 
+gem500 = {'Alexandrite (transparent dark green)',
+          'Aquamarine (transparent pale blue-green)',
+          'Black pearl (opaque pure black)',
+          'Blue spinel (transparent deep blue)',
+          'Peridot (transparent rich olive green)',
+          'Topaz (transparent golden yellow)'}
 
 # takes in a dice string (3d6, 4d8, 2d4, etc) and returns an integer for what was rolled
 def diceroller(diceString):
