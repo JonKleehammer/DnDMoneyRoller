@@ -125,7 +125,7 @@ def getSwagType(value):
 def swag0():
     # s is our swag level, from 1-100
     s = diceroller('1d100')
-    # should return (totalValue) (count) (type) (individualValue)
+    # should return (count) (type) (individualValue)
     c = 0
     iValue = 0
     if s <= 6:
@@ -180,9 +180,8 @@ def swag0():
         c = diceroller('2d6')
         iValue = 50
 
-    tValue = c * iValue
     swagType = getSwagType(iValue)
-    return tValue, c, swagType, iValue
+    return c, swagType, iValue
 
 # take in user input to choice the CR of the hoard
 # 0 : 0-4
@@ -204,3 +203,4 @@ if choice == 0:
     copperSum += copper
     copperSum += convertToCopper('s', silver)
     copperSum += convertToCopper('g', gold)
+
