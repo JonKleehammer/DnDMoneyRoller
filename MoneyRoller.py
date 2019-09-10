@@ -36,12 +36,16 @@ def getGemName(value):
 def swag0():
     # s is our swag level, from 1-100
     s = diceroller('1d100')
-    # should return (s) (totalValue) (gem|art) (gemType|artType) (individualValue)
+    # should return (totalValue) (count) (type) (individualValue)
     if s <= 6:
-        return
+        return 0, 0, 'nothing', 0
     elif s <= 16:
         # should return 2d6 10gp gems
-        return
+        c = diceroller('2d6')
+        iValue = convertToCopper('g', 10)
+        tValue = c * iValue
+
+        return tValue, c, '10gpGem', iValue
 
 
 # take in user input to choice the CR of the hoard
