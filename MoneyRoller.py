@@ -17,6 +17,7 @@ gem10 = {'Azurite (opaque mottled deep blue)',
          'Obsidian (opaque black)', 'Rhodochrosite (opaque light pink)',
          'Tiger eye (translucent brown with golden center)',
          'Turquoise (opaque light blue-green)'}
+
 gem50 = {'Bloodstone (opaque dark gray with red flecks)',
          'Carnelian (opaque orange to red-brown)',
          'Chalcedony (opaque white)',
@@ -29,6 +30,18 @@ gem50 = {'Bloodstone (opaque dark gray with red flecks)',
          'Sardonyx (opaque bands of red and white)',
          'Star rose quartz (translucent rosy stone with white star-shaped center)',
          'Zircon (transparent pale blue-green)'}
+
+gem100 = {'Amber (transparent watery gold to rich gold)',
+          'Amethyst (transparent deep purple)',
+          'Chrysoberyl (transparent yellow-green to pale green)',
+          'Coral (opaque crimson)',
+          'Garnet (transparent red, brown-green, or violet)',
+          'jade (translucent light green, deep green, or white)',
+          'jet (opaque deep black)',
+          'Pearl (opaque lustrous white, yellow, or pink)',
+          'Spinel (transparent red, red-brown, or deep green)',
+          'Tourmaline (transparent pale green, blue, brown, or red)'}
+
 
 # takes in a dice string (3d6, 4d8, 2d4, etc) and returns an integer for what was rolled
 def diceroller(diceString):
