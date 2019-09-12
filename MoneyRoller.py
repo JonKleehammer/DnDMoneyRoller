@@ -4,6 +4,7 @@
 # also takes in a number of players so that the money is evenly divisible
 
 import random
+import sys
 
 # global variables of all the gems by value
 gem10 = ('Azurite (opaque mottled deep blue)',
@@ -317,9 +318,15 @@ def swag1():
 # 1 : 5-10
 # 2 : 11-16
 # 3 : 17+
+# default is whatever my players are at currents but we'll take sys argv
 choice = 1
-
 playerCount = 5
+if len(sys.argv) == 3:
+    choice = int(sys.argv[1])
+    playerCount = int(sys.argv[2])
+elif len(sys.argv) != 1 and len(sys.argv) != 3:
+    print("Invalid input! Either use no arguments or 2 arguments (choice followed by playerCount)")
+    exit()
 
 # actually rolling the money and gems
 copperSum = 0
