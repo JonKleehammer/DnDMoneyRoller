@@ -221,7 +221,7 @@ def swag0():
 # 1 : 5-10
 # 2 : 11-16
 # 3 : 17+
-choice = 0
+choice = 1
 
 playerCount = 5
 
@@ -231,6 +231,7 @@ swagCount = 0
 swagType = ''
 swagValue = 0
 
+# Treasure Hoards 0-4
 if choice == 0:
     # rolling basic coin amounts
     copper = diceroller('6d6') * 100
@@ -245,13 +246,24 @@ if choice == 0:
     swagCount, swagType, swagValue = swag0()
     # swag value is in gold pieces, convert it to copper
     copperSum += convertToCopper('g', swagCount * swagValue)
+# Treasure Hoards 5-10
+elif choice == 1:
+    copper = diceroller('2d6') * 100
+    silver = diceroller('2d6') * 1000
+    gold = diceroller('6d6') * 100
+    platinum = diceroller('3d6') * 10
 
-    print (str(copperSum) + ' including ' + str(swagCount) + ' (' + str(swagValue) + 'gp) ' + str(swagType))
-    print('Split evenly between ' + str(playerCount) + ' players:')
+    copperSum += copper
+    copperSum += convertToCopper('s', silver)
+    copperSum += convertToCopper('g', gold)
+    copperSum += convertToCopper('p', platinum)
 
-    # splitting the copper evenly between players
-    copperPerPlayer = int(copperSum / playerCount)
+print(str(copperSum) + 'cp including ' + str(swagCount) + ' (' + str(swagValue) + 'gp) ' + str(swagType))
+print('Split evenly between ' + str(playerCount) + ' players:')
 
-    # converting the copper into an appropriately formatted amount of gold
-    simpleCoins = simplifyCurrency(copperPerPlayer)
-    print(simpleCoins)
+# splitting the copper evenly between players
+copperPerPlayer = int(copperSum / playerCount)
+
+# converting the copper into an appropriately formatted amount of gold
+simpleCoins = simplifyCurrency(copperPerPlayer)
+print(simpleCoins)
