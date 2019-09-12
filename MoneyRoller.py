@@ -97,6 +97,17 @@ art750 = ('Silver chalice set with moonstones',
           'Obsidian statuette with gold fittings and inlay',
           'Painted gold war mask')
 
+art2500 = ('Fine gold chain set with a fire opal',
+           'Old masterpiece painting',
+           'Embroidered silk and velvet mantle set with numerous moonstones',
+           'Platinum bracelet set with a sapphire',
+           'Embroidered glove set with jewel chips',
+           'jeweled anklet',
+           'Gold music box',
+           'Gold circlet set with four aquamarines',
+           'Eye patch with a mock eye set in blue sapphire and moonstone',
+           'A necklace string of small pink pearls')
+
 # takes in a dice string (3d6, 4d8, 2d4, etc) and returns an integer for what was rolled
 def diceroller(diceString):
     diceCount, diceType = diceString.split('d')
