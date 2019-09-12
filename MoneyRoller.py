@@ -6,7 +6,7 @@
 import random
 
 # global variables of all the gems by value
-gem10 = {'Azurite (opaque mottled deep blue)',
+gem10 = ('Azurite (opaque mottled deep blue)',
          'Banded agate (translucent striped brown, blue, white, or red)',
          'Blue quartz (transparent pale blue)',
          'Eye agate (translucent circles of gray, white, brown, blue, or green)',
@@ -16,9 +16,9 @@ gem10 = {'Azurite (opaque mottled deep blue)',
          'Moss agate (translucent pink or yellow-white with mossy gray or green markings)',
          'Obsidian (opaque black)', 'Rhodochrosite (opaque light pink)',
          'Tiger eye (translucent brown with golden center)',
-         'Turquoise (opaque light blue-green)'}
+         'Turquoise (opaque light blue-green)')
 
-gem50 = {'Bloodstone (opaque dark gray with red flecks)',
+gem50 = ('Bloodstone (opaque dark gray with red flecks)',
          'Carnelian (opaque orange to red-brown)',
          'Chalcedony (opaque white)',
          'Chrysoprase (translucent green)',
@@ -29,9 +29,9 @@ gem50 = {'Bloodstone (opaque dark gray with red flecks)',
          'Quartz (transparent white, smoky gray, or yellow)',
          'Sardonyx (opaque bands of red and white)',
          'Star rose quartz (translucent rosy stone with white star-shaped center)',
-         'Zircon (transparent pale blue-green)'}
+         'Zircon (transparent pale blue-green)')
 
-gem100 = {'Amber (transparent watery gold to rich gold)',
+gem100 = ('Amber (transparent watery gold to rich gold)',
           'Amethyst (transparent deep purple)',
           'Chrysoberyl (transparent yellow-green to pale green)',
           'Coral (opaque crimson)',
@@ -40,16 +40,16 @@ gem100 = {'Amber (transparent watery gold to rich gold)',
           'jet (opaque deep black)',
           'Pearl (opaque lustrous white, yellow, or pink)',
           'Spinel (transparent red, red-brown, or deep green)',
-          'Tourmaline (transparent pale green, blue, brown, or red)'}
+          'Tourmaline (transparent pale green, blue, brown, or red)')
 
-gem500 = {'Alexandrite (transparent dark green)',
+gem500 = ('Alexandrite (transparent dark green)',
           'Aquamarine (transparent pale blue-green)',
           'Black pearl (opaque pure black)',
           'Blue spinel (transparent deep blue)',
           'Peridot (transparent rich olive green)',
-          'Topaz (transparent golden yellow)'}
+          'Topaz (transparent golden yellow)')
 
-art25 = {'Silver ewer',
+art25 = ('Silver ewer',
          'Carved bone statuette',
          'Small gold bracelet',
          'Cloth-of-gold vestments',
@@ -58,9 +58,9 @@ art25 = {'Silver ewer',
          'Pair of engraved bone dice',
          'Small mirror set in a painted wooden frame',
          'Embroidered silk handkerchief',
-         'Gold locket with a painted portrait inside'}
+         'Gold locket with a painted portrait inside')
 
-art250 = {'Gold ring set with bloodstones',
+art250 = ('Gold ring set with bloodstones',
           'Carved ivory statuette',
           'Large gold bracelet',
           'Silver necklace with a gemstone pendant',
@@ -69,7 +69,7 @@ art250 = {'Gold ring set with bloodstones',
           'Large well-made tapestry',
           'Brass mug with jade inlay',
           'Box of turquoise animal figurines',
-          'Gold bird cage with electrum filigree'}
+          'Gold bird cage with electrum filigree')
 
 
 # takes in a dice string (3d6, 4d8, 2d4, etc) and returns an integer for what was rolled
@@ -122,10 +122,10 @@ def getSwagType(value):
 
 
 # art or gems for treasure hoard 0 (CR 0-4)
+# return (count) (type) (individualValue)
 def swag0():
     # s is our swag level, from 1-100
     s = diceroller('1d100')
-    # should return (count) (type) (individualValue)
     c = 0
     iValue = 0
     if s <= 6:
@@ -204,3 +204,8 @@ if choice == 0:
     copperSum += convertToCopper('s', silver)
     copperSum += convertToCopper('g', gold)
 
+    swagCount, swagType, swagValue = swag0()
+    # swag value is in gold pieces, convert it to copper
+    copperSum += convertToCopper('g', swagCount * swagValue)
+
+    print (str(copperSum) + ' including ' + str(swagCount) + ' ' + str(swagType))
