@@ -86,6 +86,16 @@ art250 = ('Gold ring set with bloodstones',
           'Box of turquoise animal figurines',
           'Gold bird cage with electrum filigree')
 
+art750 = ('Silver chalice set with moonstones',
+          'Silver-plated steellongsword with jet set in hilt',
+          'Carved harp of exotic wood with ivory inlay and zircon gems',
+          'Small gold idol',
+          'Gold dragon comb set with red garnets as eyes',
+          'Bottle stopper cork embossed with gold leaf and set with amethysts',
+          'Ceremonial electrum dagger wit~ a black pearl in the pommel',
+          'Silver and gold brooch',
+          'Obsidian statuette with gold fittings and inlay',
+          'Painted gold war mask')
 
 # takes in a dice string (3d6, 4d8, 2d4, etc) and returns an integer for what was rolled
 def diceroller(diceString):
