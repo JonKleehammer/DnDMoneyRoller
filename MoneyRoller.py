@@ -190,6 +190,8 @@ def swag0():
 # 3 : 17+
 choice = 0
 
+playerCount = 5
+
 # actually rolling the money and gems
 copperSum = 0
 gemType = ''
@@ -208,4 +210,11 @@ if choice == 0:
     # swag value is in gold pieces, convert it to copper
     copperSum += convertToCopper('g', swagCount * swagValue)
 
-    print (str(copperSum) + ' including ' + str(swagCount) + ' ' + str(swagType))
+    print (str(copperSum) + ' including ' + str(swagCount) + ' (' + str(swagValue) + 'gp) ' + str(swagType))
+    print('Split evenly between ' + str(playerCount) + ' players:')
+
+    # splitting the copper evenly between players
+    copperSum /= playerCount
+
+    # converting the copper into an appropriately formatted amount of gold
+    print(copperSum)
