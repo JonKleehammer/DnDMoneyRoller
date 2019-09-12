@@ -95,7 +95,10 @@ def convertToCopper(coinType, amount):
     elif coinType == 'p':
         return amount * 1000
 
+# takes in an amount of copper then returns a string value of the formatted currency
 def simplifyCurrency(copper):
+    if copper > 100:
+        return copper/100
     pass
 
 # returns a random gem with specified gp value
