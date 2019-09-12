@@ -50,6 +50,15 @@ gem500 = ('Alexandrite (transparent dark green)',
           'Peridot (transparent rich olive green)',
           'Topaz (transparent golden yellow)')
 
+gem1000 = ('Black opal (translucent dark green with black mottling and golden flecks)',
+           'Blue sapphire (transparent blue-white to medium blue)',
+           'Emerald (transparent deep bright green)',
+           'Fire opal (translucent fiery red)',
+           'Opal (translucent pale blue with green and golden mottling)',
+           'Star ruby (translucent ruby with white star-shaped center)',
+           'Star sapphire (translucent blue sapphire with white star-shaped center)',
+           'Yellow sapphire (transparent fiery yellow or yellow· green)')
+
 art25 = ('Silver ewer',
          'Carved bone statuette',
          'Small gold bracelet',
