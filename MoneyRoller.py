@@ -59,6 +59,11 @@ gem1000 = ('Black opal (translucent dark green with black mottling and golden fl
            'Star sapphire (translucent blue sapphire with white star-shaped center)',
            'Yellow sapphire (transparent fiery yellow or yellow· green)')
 
+gem5000 = ('Black sapphire (translucent lustrous black with glowing highlights)',
+           'Diamond (transparent blue-white, canary, pink, brown, or blue)',
+           'Jacinth (transparent fiery orange)',
+           'Ruby (transparent clear red to deep crimson)')
+
 art25 = ('Silver ewer',
          'Carved bone statuette',
          'Small gold bracelet',
