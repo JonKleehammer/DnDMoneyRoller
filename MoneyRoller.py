@@ -313,6 +313,9 @@ def swag1():
     swagType = getSwagType(iValue)
     return c, swagType, iValue
 
+def swag2():
+    pass
+
 # take in user input to choice the CR of the hoard
 # 0 : 0-4
 # 1 : 5-10
@@ -362,6 +365,16 @@ elif choice == 1:
     copperSum += convertToCopper('p', platinum)
 
     swagCount, swagType, swagValue = swag1()
+    # swag value is in gold pieces, convert it to copper
+    copperSum += convertToCopper('g', swagCount * swagValue)
+elif choice == 2:
+    gold = diceroller('4d6') * 1000
+    platinum = diceroller('5d6') * 100
+
+    copperSum += convertToCopper('g', gold)
+    copperSum += convertToCopper('p', platinum)
+
+    swagCount, swagType, swagValue = swag2()
     # swag value is in gold pieces, convert it to copper
     copperSum += convertToCopper('g', swagCount * swagValue)
 
