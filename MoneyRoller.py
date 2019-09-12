@@ -95,6 +95,9 @@ def convertToCopper(coinType, amount):
     elif coinType == 'p':
         return amount * 1000
 
+def simplifyCurrency(copper):
+    pass
+
 # returns a random gem with specified gp value
 def getSwagType(value):
     if value == 10:
