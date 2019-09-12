@@ -99,7 +99,7 @@ def convertToCopper(coinType, amount):
 def simplifyCurrency(copper):
     if copper > 100:
         return copper/100
-
+    pass
 # returns a random gem with specified gp value
 def getSwagType(value):
     if value == 10:
