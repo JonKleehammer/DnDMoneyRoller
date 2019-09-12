@@ -227,7 +227,10 @@ playerCount = 5
 
 # actually rolling the money and gems
 copperSum = 0
-gemType = ''
+swagCount = 0
+swagType = ''
+swagValue = 0
+
 if choice == 0:
     # rolling basic coin amounts
     copper = diceroller('6d6') * 100
