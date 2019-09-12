@@ -96,10 +96,38 @@ def convertToCopper(coinType, amount):
         return amount * 1000
 
 # takes in an amount of copper then returns a string value of the formatted currency
-def simplifyCurrency(copper):
-    if copper > 100:
-        return copper/100
-    pass
+def simplifyCurrency(copperSum):
+    copperSum = str(copperSum)
+
+    copper = int(copperSum[-1])
+    silver = 0
+    gold = 0
+    platinum = 0
+
+    if len(copperSum) > 1:
+        silver = int(copperSum[-2])
+    if len(copperSum) > 2:
+        gold = int(copperSum[:-2])
+        if gold > 500:
+            platinum = int(gold / 500) * 50
+            gold -= platinum * 10
+
+    simpleString = ''
+    if platinum > 0:
+        simpleString += str(platinum) + 'pp'
+    if gold > 0:
+        if len(simpleString) > 0:
+            simpleString += ' '
+        simpleString += str(gold) + 'gp'
+    if silver > 0:
+        if len(simpleString) > 0:
+            simpleString += ' '
+        simpleString += str(silver) + 'sp'
+    if copper > 0:
+        if len(simpleString) > 0:
+            simpleString += ' '
+        simpleString += str(copper) + 'cp'
+    return simpleString
 # returns a random gem with specified gp value
 def getSwagType(value):
     if value == 10:
@@ -219,7 +247,8 @@ if choice == 0:
     print('Split evenly between ' + str(playerCount) + ' players:')
 
     # splitting the copper evenly between players
-    copperSum /= playerCount
+    copperPerPlayer = int(copperSum / playerCount)
 
     # converting the copper into an appropriately formatted amount of gold
-    print(copperSum)
+    simpleCoins = simplifyCurrency(copperPerPlayer)
+    print(simpleCoins)
