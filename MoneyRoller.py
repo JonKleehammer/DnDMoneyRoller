@@ -159,7 +159,7 @@ def getSwagType(value):
 def swag0():
     # s is our swag level, from 1-100
     s = diceroller('1d100')
-    c = 0
+    c = 0 #count of swag
     iValue = 0
     if s <= 6:
         pass
@@ -216,6 +216,102 @@ def swag0():
     swagType = getSwagType(iValue)
     return c, swagType, iValue
 
+def swag1():
+    # s is our swag level, from 1-100
+    s = diceroller('1d100')
+    c = 0 # count of swag
+    iValue = 0 # individual value
+    if s <= 4:
+        pass
+    elif s <= 10:
+        # should return 2d6 10gp gems
+        c = diceroller('2d4')  # count of how many of these objects were returned
+        iValue = 25 # individual value = 25 gp value
+    elif s <= 16:
+        c = diceroller('3d6')
+        iValue = 50
+    elif s <= 22:
+        c = diceroller('3d6')
+        iValue = 100
+    elif s <= 28:
+        c = diceroller('2d4')
+        iValue = 25
+    elif s <= 32:
+        c = diceroller('2d4')
+        iValue = 25
+    elif s <= 36:
+        c = diceroller('3d6')
+        iValue = 50
+    elif s <= 40:
+        c = diceroller('3d6')
+        iValue = 100
+    elif s <= 44:
+        c = diceroller('2d4')
+        iValue = 250
+    elif s <= 49:
+        c = diceroller('2d4')
+        iValue = 24
+    elif s <= 54:
+        c = diceroller('3d6')
+        iValue = 50
+    elif s <= 59:
+        c = diceroller('3d6')
+        iValue = 100
+    elif s <= 63:
+        c = diceroller('2d4')
+        iValue = 250
+    elif s <= 66:
+        c = diceroller('2d4')
+        iValue = 25
+    elif s <= 69:
+        c = diceroller('3d6')
+        iValue = 50
+    elif s <= 72:
+        c = diceroller('3d6')
+        iValue = 100
+    elif s <= 74:
+        c = diceroller('2d4')
+        iValue = 250
+    elif s <= 76:
+        c = diceroller('2d4')
+        iValue = 25
+    elif s <= 78:
+        c = diceroller('3d6')
+        iValue = 50
+    elif s <= 79:
+        c = diceroller('3d6')
+        iValue = 100
+    elif s <= 80:
+        c = diceroller('2d4')
+        iValue = 250
+    elif s <= 84:
+        c = diceroller('2d4')
+        iValue = 25
+    elif s <= 88:
+        c = diceroller('3d6')
+        iValue = 50
+    elif s <= 91:
+        c = diceroller('3d6')
+        iValue = 100
+    elif s <= 94:
+        c = diceroller('2d4')
+        iValue = 250
+    elif s <= 96:
+        c = diceroller('3d6')
+        iValue = 100
+    elif s <= 98:
+        c = diceroller('2d4')
+        iValue = 250
+    elif s <= 99:
+        c = diceroller('3d6')
+        iValue = 100
+    elif s <= 100:
+        c = diceroller('2d4')
+        iValue = 250
+
+    swagType = getSwagType(iValue)
+    return c, swagType, iValue
+
 # take in user input to choice the CR of the hoard
 # 0 : 0-4
 # 1 : 5-10
@@ -258,7 +354,11 @@ elif choice == 1:
     copperSum += convertToCopper('g', gold)
     copperSum += convertToCopper('p', platinum)
 
-print(str(copperSum) + 'cp including ' + str(swagCount) + ' (' + str(swagValue) + 'gp) ' + str(swagType))
+    swagCount, swagType, swagValue = swag1()
+    # swag value is in gold pieces, convert it to copper
+    copperSum += convertToCopper('g', swagCount * swagValue)
+
+print('Grand Total of: ' + str(copperSum) + 'cp including ' + str(swagCount) + ' (' + str(swagValue) + 'gp) ' + str(swagType))
 print('Split evenly between ' + str(playerCount) + ' players:')
 
 # splitting the copper evenly between players
