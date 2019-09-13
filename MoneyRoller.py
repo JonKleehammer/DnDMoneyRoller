@@ -609,6 +609,16 @@ elif choice == 2:
     swagCount, swagType, swagValue = swag2()
     # swag value is in gold pieces, convert it to copper
     copperSum += convertToCopper('g', swagCount * swagValue)
+elif choice == 3:
+    gold = diceroller('12d6') * 1000
+    platinum = diceroller('8d6') * 1000
+
+    copperSum += convertToCopper('g', gold)
+    copperSum += convertToCopper('p', platinum)
+
+    swagCount, swagType, swagValue = swag2()
+    # swag value is in gold pieces, convert it to copper
+    copperSum += convertToCopper('g', swagCount * swagValue)
 
 print('Grand Total of: ' + str(copperSum) + 'cp including ' + str(swagCount) + ' (' + str(swagValue) + 'gp) ' + str(swagType))
 print('Split evenly between ' + str(playerCount) + ' players:')
