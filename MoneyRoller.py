@@ -465,6 +465,89 @@ def swag2():
     swagType = getSwagType(iValue)
     return c, swagType, iValue
 
+def swag3():
+    # s is our swag level, from 1-100
+    s = diceroller('1d100')
+    c = 0  # count of swag
+    iValue = 0  # individual value
+    if s <= 2:
+        pass
+    elif s <= 5:
+        # should return 2d6 10gp gems
+        c = diceroller('3d6')  # count of how many of these objects were returned
+        iValue = 1000  # individual value = 25 gp value
+    elif s <= 8:
+        c = diceroller('1d10')
+        iValue = 2500
+    elif s <= 11:
+        c = diceroller('1d4')
+        iValue = 7500
+    elif s <= 14:
+        c = diceroller('1d8')
+        iValue = 5000
+    elif s <= 22:
+        c = diceroller('3d6')
+        iValue = 1000
+    elif s <= 30:
+        c = diceroller('1d10')
+        iValue = 2500
+    elif s <= 38:
+        c = diceroller('1d4')
+        iValue = 7500
+    elif s <= 46:
+        c = diceroller('1d8')
+        iValue = 5000
+    elif s <= 52:
+        c = diceroller('3d6')
+        iValue = 2500
+    elif s <= 58:
+        c = diceroller('1d10')
+        iValue = 1000
+    elif s <= 63:
+        c = diceroller('1d4')
+        iValue = 7500
+    elif s <= 68:
+        c = diceroller('1d8')
+        iValue = 5000
+    elif s <= 69:
+        c = diceroller('3d6')
+        iValue = 2500
+    elif s <= 70:
+        c = diceroller('1d10')
+        iValue = 1000
+    elif s <= 71:
+        c = diceroller('1d4')
+        iValue = 7500
+    elif s <= 72:
+        c = diceroller('1d8')
+        iValue = 5000
+    elif s <= 74:
+        c = diceroller('3d6')
+        iValue = 1000
+    elif s <= 76:
+        c = diceroller('1d10')
+        iValue = 2500
+    elif s <= 78:
+        c = diceroller('1d4')
+        iValue = 7500
+    elif s <= 80:
+        c = diceroller('1d8')
+        iValue = 5000
+    elif s <= 85:
+        c = diceroller('3d6')
+        iValue = 1000
+    elif s <= 90:
+        c = diceroller('1d10')
+        iValue = 2500
+    elif s <= 95:
+        c = diceroller('1d4')
+        iValue = 7500
+    elif s <= 100:
+        c = diceroller('1d8')
+        iValue = 5000
+
+    swagType = getSwagType(iValue)
+    return c, swagType, iValue
 # take in user input to choice the CR of the hoard
 # 0 : 0-4
 # 1 : 5-10
