@@ -554,7 +554,7 @@ def swag3():
 # 2 : 11-16
 # 3 : 17+
 # default is whatever my players are at currents but we'll take sys argv
-choice = 2
+choice = 1
 playerCount = 5
 if len(sys.argv) == 3:
     choice = int(sys.argv[1])
