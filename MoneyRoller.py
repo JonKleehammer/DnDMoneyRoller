@@ -620,7 +620,7 @@ elif choice == 3:
     # swag value is in gold pieces, convert it to copper
     copperSum += convertToCopper('g', swagCount * swagValue)
 
-print('Grand Total of: ' + str(copperSum) + 'cp including ' + str(swagCount) + ' (' + str(swagValue) + 'gp) ' + str(swagType))
+print('Grand Total of: ' + simplifyCurrency(copperSum) + ' including ' + str(swagCount) + ' (' + str(swagValue) + 'gp) ' + str(swagType))
 print('Split evenly between ' + str(playerCount) + ' players:')
 
 # splitting the copper evenly between players
