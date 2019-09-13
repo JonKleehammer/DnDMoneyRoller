@@ -188,15 +188,15 @@ def getSwagType(value):
     elif value == 500:
         return random.choice(gem500)
     elif value == 750:
-        return random.choice()
+        return random.choice(art750)
     elif value == 1000:
-        return random.choice(gem100)
+        return random.choice(gem1000)
     elif value == 2500:
-        return random.choice()
+        return random.choice(art2500)
     elif value == 5000:
-        return random.choice(gem100)
+        return random.choice(gem5000)
     elif value == 7500:
-        return random.choice(gem100)
+        return random.choice(art7500)
 
 
 # art or gems for treasure hoard 0 (CR 0-4)
@@ -358,7 +358,112 @@ def swag1():
     return c, swagType, iValue
 
 def swag2():
-    pass
+    # s is our swag level, from 1-100
+    s = diceroller('1d100')
+    c = 0  # count of swag
+    iValue = 0  # individual value
+    if s <= 3:
+        pass
+    elif s <= 6:
+        # should return 2d6 10gp gems
+        c = diceroller('2d4')  # count of how many of these objects were returned
+        iValue = 250  # individual value = 25 gp value
+    elif s <= 9:
+        c = diceroller('2d4')
+        iValue = 750
+    elif s <= 12:
+        c = diceroller('3d6')
+        iValue = 500
+    elif s <= 15:
+        c = diceroller('3d6')
+        iValue = 1000
+    elif s <= 19:
+        c = diceroller('2d4')
+        iValue = 250
+    elif s <= 23:
+        c = diceroller('2d4')
+        iValue = 750
+    elif s <= 26:
+        c = diceroller('3d6')
+        iValue = 500
+    elif s <= 29:
+        c = diceroller('3d6')
+        iValue = 1000
+    elif s <= 35:
+        c = diceroller('2d4')
+        iValue = 250
+    elif s <= 40:
+        c = diceroller('2d4')
+        iValue = 750
+    elif s <= 45:
+        c = diceroller('3d6')
+        iValue = 500
+    elif s <= 50:
+        c = diceroller('3d6')
+        iValue = 1000
+    elif s <= 54:
+        c = diceroller('2d4')
+        iValue = 250
+    elif s <= 58:
+        c = diceroller('2d4')
+        iValue = 750
+    elif s <= 62:
+        c = diceroller('3d6')
+        iValue = 500
+    elif s <= 66:
+        c = diceroller('3d6')
+        iValue = 1000
+    elif s <= 68:
+        c = diceroller('2d4')
+        iValue = 250
+    elif s <= 70:
+        c = diceroller('2d4')
+        iValue = 750
+    elif s <= 72:
+        c = diceroller('3d6')
+        iValue = 500
+    elif s <= 74:
+        c = diceroller('3d6')
+        iValue = 1000
+    elif s <= 76:
+        c = diceroller('2d4')
+        iValue = 250
+    elif s <= 78:
+        c = diceroller('2d4')
+        iValue = 750
+    elif s <= 80:
+        c = diceroller('3d6')
+        iValue = 500
+    elif s <= 82:
+        c = diceroller('3d6')
+        iValue = 1000
+    elif s <= 85:
+        c = diceroller('2d4')
+        iValue = 250
+    elif s <= 88:
+        c = diceroller('2d4')
+        iValue = 750
+    elif s <= 90:
+        c = diceroller('3d6')
+        iValue = 500
+    elif s <= 92:
+        c = diceroller('3d6')
+        iValue = 1000
+    elif s <= 94:
+        c = diceroller('2d4')
+        iValue = 250
+    elif s <= 96:
+        c = diceroller('2d4')
+        iValue = 750
+    elif s <= 98:
+        c = diceroller('3d6')
+        iValue = 500
+    elif s <= 100:
+        c = diceroller('3d6')
+        iValue = 1000
+
+    swagType = getSwagType(iValue)
+    return c, swagType, iValue
 
 # take in user input to choice the CR of the hoard
 # 0 : 0-4
@@ -366,7 +471,7 @@ def swag2():
 # 2 : 11-16
 # 3 : 17+
 # default is whatever my players are at currents but we'll take sys argv
-choice = 1
+choice = 2
 playerCount = 5
 if len(sys.argv) == 3:
     choice = int(sys.argv[1])
