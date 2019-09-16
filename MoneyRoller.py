@@ -559,6 +559,11 @@ playerCount = 5
 if len(sys.argv) == 3:
     choice = int(sys.argv[1])
     playerCount = int(sys.argv[2])
+    if choice < 0 or choice > 3:
+        print("Your treasure hoard choice should be within [0-3]")
+    if playerCount <= 0:
+        print("The Number of players should be > 0")
+        exit()
 elif len(sys.argv) != 1 and len(sys.argv) != 3:
     print("Invalid input! Either use no arguments or 2 arguments (choice followed by playerCount)")
     exit()
