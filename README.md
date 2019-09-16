@@ -21,10 +21,33 @@ Anything above 500 gold we will convert to platinum in increments of 50 (50 plat
 ### The Inclusion of gems and art objects
 One of my players likes accepting some of his coin value in gems or art objects. I included the description of the art objects according to the DMG. He convert coins from his loot to the specified gem/art object.
 
-### Example Output
+### Running The Program
+You can run the program yourself by downloading the .py file yourself and use a command such as
+`python MoneyRoller.py`
 
+#### You may pass in 2 arguments
+The first argument is the choice of treasure hoard [0-3]:
+
+Choice | Hoard CR
+--- | ---
+0 | 0-4
+1 | 5-10
+2 | 11-16
+3 | 17+
+
+The Second arument should be the number of players the loot is being split between [>0]
+If you don't pass in any arguments the defaults will be used (1, 5)
+
+Here's what it would look like if you ran it with arguments (a CR 11-16 treasure split between 4 players)
+`python MoneyRoller.py 2 4`
+
+
+
+### Example Output
+```
 Grand Total of: 400pp 458gp including 11 (50gp) Bloodstone (opaque dark gray with red flecks)
 
 Split evenly between 5 players:
 
 50pp 391gp 6sp
+```
